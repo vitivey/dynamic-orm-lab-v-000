@@ -1,6 +1,5 @@
 require_relative "../config/environment.rb"
 require 'active_support/inflector'
-require "pry"
 
 class InteractiveRecord
 
@@ -16,6 +15,7 @@ class InteractiveRecord
     column_name.map {|hash| hash["name"]}.compact
   end
 
+<<<<<<< HEAD
   # self.column_names.each {|column| attr_accessor column.to_sym}
 
   def initialize(attribute_hash={})
@@ -55,6 +55,17 @@ class InteractiveRecord
     sql = "SELECT * FROM #{table_name} WHERE #{attribute.keys[0].to_s} = ?"
     DB[:conn].execute(sql, "#{attribute.values[0]}")
   end
+=======
+  self.column_names.each {|column| attr_accessor column.to_sym}
+
+  def initialize(attributes)
+    attributes.each do |variable, value|
+      self.send("#{variable}=", value)
+      binding.pry
+    end
+  end
+
+>>>>>>> f114917d1b355e6d5a557a1fbf2e87ecc488cf66
 
 
 end
