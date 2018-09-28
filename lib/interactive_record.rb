@@ -15,7 +15,6 @@ class InteractiveRecord
     column_name.map {|hash| hash["name"]}.compact
   end
 
-<<<<<<< HEAD
   # self.column_names.each {|column| attr_accessor column.to_sym}
 
   def initialize(attribute_hash={})
