@@ -54,17 +54,7 @@ class InteractiveRecord
     sql = "SELECT * FROM #{table_name} WHERE #{attribute.keys[0].to_s} = ?"
     DB[:conn].execute(sql, "#{attribute.values[0]}")
   end
-=======
-  self.column_names.each {|column| attr_accessor column.to_sym}
 
-  def initialize(attributes)
-    attributes.each do |variable, value|
-      self.send("#{variable}=", value)
-      binding.pry
-    end
-  end
-
->>>>>>> f114917d1b355e6d5a557a1fbf2e87ecc488cf66
 
 
 end
